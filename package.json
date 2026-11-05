@@ -1,8 +1,8 @@
 {
-  "name": "my-javascript-app",
+  "name": "my-app",
   "version": "1.0.0",
-  "main": "index.html",
+  "main": "main-electron.js",
   "scripts": {
-    "build": "nwbuild --platforms win64 --outputDir dist ."
+    "build": "electron-packager . MyProgram --platform=win32 --arch=x64 --overwrite"
   }
 }
