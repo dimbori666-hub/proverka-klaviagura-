@@ -1,8 +1,9 @@
+
 name: Build JS EXE
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "основной" ]
   workflow_dispatch:
 
 jobs:
@@ -18,14 +19,8 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Install Builder
-      run: npm install -g nwbuilder
+    - name: Install NW.js Builder
+      run: npm install -g nw-builder
 
     - name: Build EXE
-      run: nwbuild . --platforms win64 --outputDir dist
-
-    - name: Upload EXE Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: my-js-program
-        path: dist/
+      run: nwbuild --platforms win64 --srcDir . --outputDir dist .
