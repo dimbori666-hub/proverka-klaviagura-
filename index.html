@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Моя Программа</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; background: #f0f2f5; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        input { font-size: 16px; padding: 10px; width: 250px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; }
+        button { font-size: 16px; padding: 10px 20px; margin: 5px; cursor: pointer; border: none; border-radius: 4px; background: #007bff; color: white; width: 150px; }
+        button:hover { background: #0056b3; }
+        .btn-continue { background: #28a745; }
+        .btn-continue:hover { background: #218838; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Введите слова на русском:</h2>
+    <input type="text" id="userInput" placeholder="Писать тут...">
+    <br>
+    <button onclick="onReady()">Готово</button>
+    <br>
+    <button class="btn-continue" onclick="onContinue()">Продолжить</button>
+</div>
+
+<script>
+    function onReady() {
+        const text = document.getElementById('userInput').value;
+        if (!text.trim()) {
+            alert('Пожалуйста, введите текст!');
+        } else {
+            alert('Текст "' + text + '" успешно принят!');
+        }
+    }
+
+    function onContinue() {
+        alert('Переходим к следующему шагу...');
+    }
+</script>
+
+</body>
+</html>
